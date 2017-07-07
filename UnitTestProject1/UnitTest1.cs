@@ -8,18 +8,29 @@ namespace UnitTestProject1
     [TestFixture]
     public class TestClass : Hooks
     {
-
         [Test]
-        [Order(1)]
         public void Test(
         [ValueSource(typeof(Hooks), "BrowserToRun")]string browserName)
         {
-            Initialize(browserName);
+            //Initialize(browserName);
+            driver.Navigate().GoToUrl("http://google.com");
+            driver.FindElement(By.Name("q"));
+            Console.WriteLine("Login to Google succeeded");
+        }
+
+
+        [Test]      
+        public void Test2(
+       [ValueSource(typeof(Hooks), "BrowserToRun")]string browserName)
+        {
+            //Initialize(browserName);
             driver.Navigate().GoToUrl("http://google.com");
             driver.FindElement(By.Name("q"));
             Console.WriteLine("Login to Google succeeded");
         }
     }
+
+
 
 
 }

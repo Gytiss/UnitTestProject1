@@ -90,6 +90,14 @@
     <OutputPath>bin\Dev\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Process Include="chromedriver.exe">
+      <InProject>false</InProject>
+    </Process>
+    <Process Include="geckodriver.exe">
+      <InProject>false</InProject>
+    </Process>
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Google.Apis, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.21.0\lib\net45\Google.Apis.dll</HintPath>
       <Private>True</Private>
@@ -284,4 +292,7 @@
   </Target>
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
+<Target Name = "Kill" BeforeTargets="Compile">
+<Exec Command="taskkill /F /IM %(Process.Identity)" IgnoreExitCode="true" ContinueOnError="true" />
+</Target>
 </Project>

@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
-
+using System.Linq;
 
 namespace UnitTestProject1
 {
@@ -17,12 +17,19 @@ namespace UnitTestProject1
         IDriverContext gateway = null;
         public IWebDriver driver = null;
         
-        //[SetUp]
         public void Initialize(string browserName)
         {           
             LocalRemoteFactory factory = new LocalRemoteFactory();
             this.gateway = factory.DriverGateway("Local");
             driver = this.gateway.GetDriver(browserName, driver);            
+        }
+
+        [SetUp]
+        public void Initialize()
+        {
+            var singleName = BrowserToRun().FirstOrDefault();
+            //var singleName = browserName.FirstOrDefault();
+            Initialize(singleName);
         }
 
 
