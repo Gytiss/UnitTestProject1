@@ -1,0 +1,101 @@
+[
+  {
+    "Secure": true,
+    "IsHttpOnly": false,
+    "Name": "GALX",
+    "Value": "z7GkfczYdec",
+    "Domain": "accounts.google.com",
+    "Path": "/",
+    "Expiry": null
+  },
+  {
+    "Secure": false,
+    "IsHttpOnly": false,
+    "Name": "CONSENT",
+    "Value": "YES+LT.en+20150830-14-0",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2038-01-10T09:59:59.74+02:00"
+  },
+  {
+    "Secure": true,
+    "IsHttpOnly": true,
+    "Name": "SSID",
+    "Value": "AJ7khVkcrjN8sqSQ8",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": false,
+    "IsHttpOnly": false,
+    "Name": "SID",
+    "Value": "XwT-B8wBLBkv5BYPMLdoFh-S7y9j1iC4azoL7wXl_7e9jdpUFgGdqE9NhIneAKmCwCc5jA.",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": true,
+    "IsHttpOnly": true,
+    "Name": "LSID",
+    "Value": "doritos|o.myaccount.google.com|s.LT|s.youtube:XwT-BzjMN1TTpy9PipymfwiHWUGGxRjp6FiEuDFsnlHDLUWk25-IJaP-CrFakGsRmOWfcw.",
+    "Domain": "accounts.google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": false,
+    "IsHttpOnly": false,
+    "Name": "APISID",
+    "Value": "qPoDKDOjG2hJ6hmc/Aq8o7QIEhwkA2fUq5",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": false,
+    "IsHttpOnly": true,
+    "Name": "HSID",
+    "Value": "AksQTnKylcEvkx636",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": true,
+    "IsHttpOnly": false,
+    "Name": "SAPISID",
+    "Value": "MERBm_mTD0LNTIRA/ADU2F4uoDUbY5DfF8",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": true,
+    "IsHttpOnly": true,
+    "Name": "ACCOUNT_CHOOSER",
+    "Value": "AFx_qI6L0TDpyw71TKQ3vvBLQOnrbnBgdK-aYQh2rLzZc6aDurkEHajLYAnBUKgzS7Ur_-nw1BkoeqNbTY99231xy8ahvQAbNmIF7D9VlyJSYcSRPx216y22FsNeuXYdNP-QTeOmZD4unovcHDDB8ePdM2aeRhfNr8db2UhDwjuS-ZZ1pznhh1eFqnCFocECbbAubGRMX9-O",
+    "Domain": "accounts.google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:35:59.528+02:00"
+  },
+  {
+    "Secure": false,
+    "IsHttpOnly": true,
+    "Name": "NID",
+    "Value": "97=v-zlDY0XDAOjhKP7PWLNNalWgM0Ay_Rd62YYrg-4_uL0DDBm61UanmbkALGeJbJ6zGT6m72DDJLtBf59cGh1ff922P9flTb8hOz1F3i138Y_ou7ICTmWaDR5QTcyJY80fD11TFQaokChsZXAwEaAGgvLL3JRRpG1phMXYUxRlocCHU31z3-nHjqok46_Vfd8",
+    "Domain": ".google.com",
+    "Path": "/",
+    "Expiry": "2017-08-25T15:35:59.528+03:00"
+  },
+  {
+    "Secure": true,
+    "IsHttpOnly": true,
+    "Name": "GAPS",
+    "Value": "1:2U2FOw83eHJ9yItNpDIyAnU86dnWlw:j0WcXVs8ChydtnyH",
+    "Domain": "accounts.google.com",
+    "Path": "/",
+    "Expiry": "2019-02-23T14:36:31.133+02:00"
+  }
+]
