@@ -6,7 +6,9 @@ using OpenQA.Selenium.Internal;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +16,49 @@ using System.Threading.Tasks;
 namespace UnitTestProject1
 {
     
-    public static class SeleniumExtension
+    public static class ElementExtensions
     {
-        //static Base x = new Base();
-        //public static IWebDriver driver { get; set; }
+
+        /// <summary>
+        ///     Gets the specified elements parent element.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns>The parent element</returns>
+        public static IWebElement GetParent(this IWebElement element)
+        {
+            return element.FindElement(By.XPath("./parent::*"));
+        }
+
+        /// <summary>
+        ///     Gets the specified elements child element.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns>The child element</returns>
+        public static IWebElement GetChild(this IWebElement element)
+        {
+            return element.FindElement(By.XPath("./child::*"));
+        }
+
+        /// <summary>
+        ///     Gets the preceding elements sibling.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
+        public static IWebElement GetPreviousSibling(this IWebElement element)
+        {
+            return element.FindElement(By.XPath("./preceding-sibling::*"));
+        }
+
+        /// <summary>
+        ///     Gets the following elements sibling.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
+        public static IWebElement GetNextSibling(this IWebElement element)
+        {
+            return element.FindElement(By.XPath("./following-sibling::*"));
+        }
+
 
         public static void EnterText(this IWebElement element, string text)
         {
@@ -49,8 +90,5 @@ namespace UnitTestProject1
         //    new WebDriverWait(driver, TimeSpan.FromSeconds(35)).
         //         Until(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(".content-loader")));
         //}
-
-
-
     }
 }

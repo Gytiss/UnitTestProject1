@@ -1,57 +1,53 @@
-﻿using NUnit.Framework;
+﻿using Factory;
+using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.PhantomJS;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Drawing;
 using System.Linq;
+using static Factory.MyClass;
 
 namespace UnitTestProject1
 {
-    public class Hooks
+    public class Hooks: Config
     {
-        IDriverContext gateway = null;
+        private IDriverContext gateway = null;
         public IWebDriver driver = null;
-        
-        public void Initialize(string browserName)
-        {           
+
+
+
+        private void Initialize(string browserName, string environment)
+        {
             LocalRemoteFactory factory = new LocalRemoteFactory();
-            this.gateway = factory.DriverGateway("Local");
-            driver = this.gateway.GetDriver(browserName, driver);            
+            this.gateway = factory.DriverGateway(environment);
+            driver = this.gateway.GetDriver(browserName, driver);
         }
 
-        [SetUp]
-        public void Initialize()
+        ////[SetUp]
+        //public void Initialize()
+        //{
+        //    var browserName = BrowserToRun().FirstOrDefault();
+        //    Initialize(browserName, "Local");
+        //}
+
+        public Hooks() 
         {
-            var singleName = BrowserToRun().FirstOrDefault();
-            //var singleName = browserName.FirstOrDefault();
-            Initialize(singleName);
+            
+            var browserName = BrowserToRun().FirstOrDefault();
+            var environment = Environment().FirstOrDefault();
+            Initialize(browserName, environment);
         }
 
-
-        public static IEnumerable<String> BrowserToRun()
+        public Hooks(string browserName, string environment)
         {
-            String browsers = ConfigurationManager.AppSettings["Browser"];
-
-            yield return browsers;
-           
+            Initialize(browserName, environment);
         }
 
-        public static IEnumerable<String> SyncGeneVersion()
-        {
-            String versions = ConfigurationManager.AppSettings["Version"];
-
-            yield return versions;
-
-        }
 
         [TearDown]
         public virtual void CleanUp()
-        { 
+        {
             if (TestContext.CurrentContext.Result.Outcome.Status.Equals(TestStatus.Passed))
             {
                 Console.WriteLine("Test Passed");
@@ -85,7 +81,7 @@ namespace UnitTestProject1
 
                 else
                     Console.WriteLine("Test Failed");
-                
+
             }
 
             driver.Quit();

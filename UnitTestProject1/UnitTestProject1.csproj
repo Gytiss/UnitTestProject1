@@ -89,6 +89,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
     <OutputPath>bin\Dev\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Process Include="chromedriver.exe">
       <InProject>false</InProject>
@@ -98,29 +104,23 @@
     </Process>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Google.Apis, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.21.0\lib\net45\Google.Apis.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.21.0\lib\net45\Google.Apis.Auth.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis.Auth, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.27.1\lib\net45\Google.Apis.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.21.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.27.1\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Core.1.21.0\lib\net45\Google.Apis.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis.Core, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.27.1\lib\net45\Google.Apis.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.21.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Tasks.v1, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Tasks.v1.1.21.0\lib\net45\Google.Apis.Tasks.v1.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Apis.Tasks.v1, Version=1.27.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Tasks.v1.1.27.1\lib\net45\Google.Apis.Tasks.v1.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.GData.Client.2.2.0.0\lib\Google.GData.Client.dll</HintPath>
@@ -134,29 +134,26 @@
       <HintPath>..\packages\Google.GData.Extensions.2.2.0.0\lib\Google.GData.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
-    <Reference Include="WebDriver, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.3.3.0\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.3.0\lib\net40\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
     <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
       <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
@@ -178,13 +175,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Elements\IMyElement.cs" />
     <Compile Include="Initialize\DriverFactory.cs" />
-    <Compile Include="Initialize\HelperMethods.cs" />
-    <Compile Include="Initialize\IDriverFactory.cs" />
+    <Compile Include="HelperMethods.cs" />
+    <Compile Include="Initialize\Config.cs" />
+    <Compile Include="Initialize\IDriverContext.cs" />
     <Compile Include="MyTest.cs" />
+    <Compile Include="PageObjects\Page.cs" />
+    <Compile Include="ElementExtensions.cs" />
     <Compile Include="Services\GoogleTasks.cs" />
-    <Compile Include="SeleniumExtension.cs" />
+    <Compile Include="DriverExtension.cs" />
     <Compile Include="Initialize\Hooks.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="TestData\Accounts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,15 +207,6 @@
     <None Include="app.config">
       <TransformOnBuild>true</TransformOnBuild>
     </None>
-    <None Include="app.Debug.config">
-      <DependentUpon>app.config</DependentUpon>
-    </None>
-    <None Include="app.Dev.config">
-      <DependentUpon>app.config</DependentUpon>
-    </None>
-    <None Include="app.Release.config">
-      <DependentUpon>app.config</DependentUpon>
-    </None>
     <None Include="CookieJson\test.json" />
     <None Include="CookieJson\test2.json" />
     <None Include="packages.config" />
@@ -229,7 +222,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PageObjects\" />
     <Folder Include="Screenshots\" />
   </ItemGroup>
   <Choose>
@@ -258,8 +250,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.PhantomJS.1.0.0.0\build\Selenium.WebDriver.PhantomJS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.PhantomJS.1.0.0.0\build\Selenium.WebDriver.PhantomJS.targets'))" />
     <Error Condition="!Exists('..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.17.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.17.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.WebDriver.PhantomJS.1.0.0.0\build\Selenium.WebDriver.PhantomJS.targets" Condition="Exists('..\packages\Selenium.WebDriver.PhantomJS.1.0.0.0\build\Selenium.WebDriver.PhantomJS.targets')" />
   <Import Project="..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets" Condition="Exists('..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets')" />
@@ -290,9 +282,12 @@
     <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
     <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
   </Target>
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.28.0.1-beta\build\Selenium.WebDriver.ChromeDriver.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.16.1\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
-<Target Name = "Kill" BeforeTargets="Compile">
-<Exec Command="taskkill /F /IM %(Process.Identity)" IgnoreExitCode="true" ContinueOnError="true" />
-</Target>
+  <Target Name="Kill" BeforeTargets="AfterTest">
+    <Exec Command="powershell -NonInteractive -executionPolicy Unrestricted -Command &quot;&amp;{. .\t.ps1; Test}&quot;" />
+  </Target>
+  <!--<Target Name="Kill" BeforeTargets="AfterBuild">
+    <Exec Command="powershell -NonInteractive -executionPolicy Unrestricted -Command &quot;&amp;{. .\t.ps1; Test2}&quot;" />
+  </Target>-->
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.17.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.17.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
 </Project>

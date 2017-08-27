@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1
 {
-    public interface IDriverContext
+    interface Itest
     {
-        IWebDriver GetDriver(string browserName, IWebDriver driver);
 
+    }
 
+    public class Test
+    {
+        //public Itest Test { get; }
     }
 }
