@@ -118,33 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="exchangeServiceLogin" xml:space="preserve">
-    <value>test17@4teamcorp.com</value>
+    <value />
   </data>
   <data name="exchangeServicePass" xml:space="preserve">
-    <value>Testing107</value>
+    <value />
   </data>
   <data name="googleLogin" xml:space="preserve">
-    <value>4teamgts2@gmail.com</value>
+    <value />
   </data>
   <data name="googlePass" xml:space="preserve">
-    <value>Labaslabas</value>
+    <value />
   </data>
   <data name="googleServiceLogin" xml:space="preserve">
-    <value>4teamtests5@gmail.com</value>
+    <value />
   </data>
   <data name="googleServicePass" xml:space="preserve">
-    <value>Testing107</value>
+    <value />
   </data>
   <data name="googleSignUpAccount" xml:space="preserve">
-    <value>4teamtests5@gmail.com</value>
+    <value />
   </data>
   <data name="googleSignUpPassword" xml:space="preserve">
-    <value>Testing107</value>
+    <value />
   </data>
   <data name="iCloudServiceLogin" xml:space="preserve">
-    <value>t4team10@icloud.com</value>
+    <value />
   </data>
   <data name="iCloudServicePass" xml:space="preserve">
-    <value>Vilnius2014</value>
+    <value />
   </data>
 </root>

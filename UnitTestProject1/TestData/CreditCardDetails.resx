@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cardNumber" xml:space="preserve">
-    <value>4408377679743841</value>
+    <value />
   </data>
   <data name="cardType" xml:space="preserve">
-    <value>MasterCard</value>
+    <value />
   </data>
   <data name="city" xml:space="preserve">
-    <value>Panevezys</value>
+    <value />
   </data>
   <data name="company" xml:space="preserve">
-    <value>4team</value>
+    <value />
   </data>
   <data name="country" xml:space="preserve">
     <value>Lithuania</value>
@@ -154,7 +154,7 @@
     <value>878558714</value>
   </data>
   <data name="streetAddress" xml:space="preserve">
-    <value>Laisves aikste</value>
+    <value />
   </data>
   <data name="zipCode" xml:space="preserve">
     <value>3500</value>

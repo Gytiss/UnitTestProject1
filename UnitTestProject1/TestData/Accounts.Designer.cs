@@ -61,7 +61,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to test17@4teamcorp.com.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string exchangeServiceLogin {
             get {
@@ -70,7 +70,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Testing107.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string exchangeServicePass {
             get {
@@ -79,7 +79,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 4teamgts2@gmail.com.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googleLogin {
             get {
@@ -88,7 +88,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Labaslabas.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googlePass {
             get {
@@ -97,7 +97,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 4teamtests5@gmail.com.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googleServiceLogin {
             get {
@@ -106,7 +106,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Testing107.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googleServicePass {
             get {
@@ -115,7 +115,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 4teamtests5@gmail.com.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googleSignUpAccount {
             get {
@@ -124,7 +124,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Testing107.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string googleSignUpPassword {
             get {
@@ -133,7 +133,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to t4team10@icloud.com.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string iCloudServiceLogin {
             get {
@@ -142,7 +142,7 @@ namespace UnitTestProject1.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vilnius2014.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string iCloudServicePass {
             get {
