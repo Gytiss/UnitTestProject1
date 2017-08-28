@@ -8,6 +8,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System.Globalization;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.IE;
 
 namespace Factory
 {
@@ -38,13 +39,19 @@ namespace Factory
                     driver = new EdgeDriver();
                 }
 
+                if (browserName.Equals("Explorer"))
+                {
+                    driver = new InternetExplorerDriver();
+                }
+
                 if (browserName.Equals("Phantom"))
                 {
                     driver = new PhantomJSDriver();
                 }
 
-                driver.Manage().Window.Size = new Size(1300, 850);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                driver.Manage().Window.Maximize();
+                //driver.Manage().Window.Size = new Size(1300, 850);
+                //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
                 Console.WriteLine("Page opened: " + driver.Url);
                 TestContext.Progress.WriteLine("Test running: " + TestContext.CurrentContext.Test.Name);
 

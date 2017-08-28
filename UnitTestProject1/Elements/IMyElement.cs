@@ -10,13 +10,77 @@ using System.Collections.ObjectModel;
 namespace UnitTestProject1.Elements
 {
 
-    public interface IMyElement : IWrapsElement
+    public interface IMyElement
     {
+        /// <summary>
+        /// Clicks this element
+        /// </summary>
         void Click();
+
+        void SendKeys(string text);
+
         IOther Other { get; }
 
         IMyElement GetElement(By by);
+    }
 
+    public interface IMyButton
+    {
+        /// <summary>
+        /// Clicks this element
+        /// </summary>
+        void Click();
+
+        IOther Other { get; }
+
+        IMyElement GetElement(By by);
+    }
+
+    public interface ICheckBox
+    {
+        /// <summary>
+        /// Clicks this element
+        /// </summary>
+        void Click();
+
+        IOther Other { get; }
+
+        IMyElement GetElement(By by);
+    }
+
+
+    public class MyElement : IMyElement, IMyButton
+    {
+        private IWebElement _element;
+
+        public IOther Other => new Other(_element);
+
+        public IWebElement WebElement => _element;
+
+        private ISearchContext _search;
+
+
+        public MyElement(IWebElement element, By by, ISearchContext search)
+        {
+            _search = search;
+            _element = element;
+        }
+
+        public void Click()
+        {
+            _element.Click();
+        }
+
+
+        public IMyElement GetElement(By by)
+        {
+            return _search.FindElement(by) as IMyElement;
+        }
+
+        public void SendKeys(string text)
+        {
+            _element.SendKeys(text);
+        }
     }
 
     public interface IOther
@@ -53,7 +117,7 @@ namespace UnitTestProject1.Elements
     }
 
 
-    public class Other: IOther
+    public class Other : IOther
     {
         IWebElement _myElement;
         public Other(IWebElement myElement)
@@ -75,38 +139,6 @@ namespace UnitTestProject1.Elements
         public string GetCssValue(string propertyName)
         {
             return _myElement.GetCssValue(propertyName);
-        }
-
-    }
-
-
-    public class MyElement : IMyElement
-    {
-        private IWebElement _element;
-
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public IWebElement WrappedElement => _element;
-
-        public IOther Other => new Other(_element);
-
-        private ISearchContext _search;
-
-
-        public MyElement(IWebElement element, By by, ISearchContext search)
-        {
-            _search = search;
-            _element = element;
-        }
-
-        public void Click()
-        {
-            _element.Click();
-        }
-
-
-        public IMyElement GetElement(By by)
-        {
-            return _search.FindElement(by) as IMyElement;
         }
 
     }

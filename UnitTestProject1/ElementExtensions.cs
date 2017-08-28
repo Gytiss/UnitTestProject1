@@ -66,13 +66,13 @@ namespace UnitTestProject1
             element.SendKeys(text);
         }
 
-        public static void Click_WaitForSpinner(this IWebElement element, IWebDriver driver)
-        {
+        //public static void Click_WaitForSpinner(this IWebElement element, IWebDriver driver)
+        //{
 
-            element.Click();
-            new WebDriverWait(driver, TimeSpan.FromSeconds(37)).
-                 Until(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(".content-loader")));
-        }
+        //    element.Click();
+        //    new WebDriverWait(driver, TimeSpan.FromSeconds(37)).
+        //         Until(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(".content-loader")));
+        //}
 
         public static void Click_IgnoreStaleElementException(this IWebElement element, IWebDriver driver)
         {

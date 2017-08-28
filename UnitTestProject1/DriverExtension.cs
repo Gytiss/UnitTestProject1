@@ -21,18 +21,31 @@ namespace UnitTestProject1
     {
         
         public static IMyElement GetElement(this ISearchContext element, By by)
+           
         {
             var test = element.GetElement<MyElement>(by);
             return test;
         }
 
+        //public static IMyButton GetElement<T>(this ISearchContext element, By by)
+
+        //{
+        //    var test = element.GetElement<MyElement>(by, "test2");
+        //    return test;
+        //}
+
         public static T GetElement<T>(this ISearchContext searchContext, By by)
             where T : class
         {
+            IWebDriver d = searchContext as IWebDriver;
+            WebDriverWait waiter = new WebDriverWait(d, TimeSpan.FromSeconds(6));
+            waiter.Until(ExpectedConditions.ElementExists(by));
+            waiter.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(by));
+           
             IWebElement webElemement = searchContext.FindElement(by);
-            //ISearchContext search = searchContext;
             return webElemement.As2<T>(by, searchContext);
         }
+
 
         /// <summary>
         /// Converts generic IWebElement into specified web element (Checkbox, Table, etc.) .
@@ -69,7 +82,7 @@ namespace UnitTestProject1
         private static T As2<T>(this IWebElement webElement, By by, ISearchContext search)
             where T : class
         {
-            var constructor = typeof(T).GetConstructor(new[] { typeof(IWebElement), typeof(By), typeof(ISearchContext)});
+            var constructor = typeof(MyElement).GetConstructor(new[] { typeof(IWebElement), typeof(By), typeof(ISearchContext)});
 
             if (constructor != null)
             {

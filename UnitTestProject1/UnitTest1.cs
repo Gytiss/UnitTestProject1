@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Threading;
+using UnitTestProject1.Elements;
 
 namespace UnitTestProject1
 {
@@ -26,9 +27,23 @@ namespace UnitTestProject1
         public void Test2()
         {            
             driver.Navigate().GoToUrl("http://google.com");
-            var myElement = driver.GetElement(By.XPath("//a[contains(.,'Gmail')]"));
-            string text = myElement.Other.Text;
-            Console.WriteLine(text);
+            
+
+            driver.GetElement(By.Name("q")).SendKeys("terminator2");
+            //var test = driver.GetElement<IMyButton>(By.Name("btnK"), "testsd");
+            //test.Click();
+            driver.GetElement<IMyButton>(By.ClassName("lsb")).Click();
+            driver.GetElement(By.XPath("//a[contains(.,'Terminator 2: Judgment Day (1991) - IMDb')]")).Click();
+            driver.GetElement(By.XPath("//input[@name='q']")).SendKeys("terminator");
+            driver.GetElement(By.XPath("//button[@class='primary btn']")).Click();
+            driver.GetElement(By.XPath("//a[contains(.,'The Terminator')]")).Click();
+            driver.GetElement(By.XPath("//span[contains(.,'James Cameron')]")).Click();
+            
+            driver.GetElement(By.Id("home_img")).Click();
+            driver.GetElement(By.Id("home_img")).Click();
+            driver.GetElement(By.Name("q")).SendKeys("terminator2");
+            driver.GetElement(By.Id("navbar-submit-button")).Click();
+           
         }
     }
 
