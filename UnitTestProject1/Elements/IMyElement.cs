@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 namespace UnitTestProject1.Elements
 {
 
-    public interface IMyElement
+    public interface IMyElement: IMySearch
     {
         /// <summary>
         /// Clicks this element
@@ -19,33 +19,38 @@ namespace UnitTestProject1.Elements
 
         void SendKeys(string text);
 
-        IOther Other { get; }
-
-        IMyElement GetElement(By by);
     }
 
-    public interface IMyButton
+    public interface IMySearch
     {
-        /// <summary>
-        /// Clicks this element
-        /// </summary>
-        void Click();
 
         IOther Other { get; }
 
         IMyElement GetElement(By by);
     }
 
-    public interface ICheckBox
+    public interface IMyButton : IMySearch
     {
         /// <summary>
         /// Clicks this element
         /// </summary>
         void Click();
 
-        IOther Other { get; }
+        //IOther Other { get; }
 
-        IMyElement GetElement(By by);
+        //IMyElement GetElement(By by);
+    }
+
+    public interface ICheckBox : IMySearch
+    {
+        /// <summary>
+        /// Clicks this element
+        /// </summary>
+        void Click();
+
+        //IOther Other { get; }
+        //
+        //IMyElement GetElement(By by);
     }
 
 
