@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace UnitTestProject1.Elements
 {
 
-    public interface IMyElement: IMySearch
+    public interface IMyElement : IMySearch
     {
         /// <summary>
         /// Clicks this element
@@ -36,25 +37,27 @@ namespace UnitTestProject1.Elements
         /// </summary>
         void Click();
 
-        //IOther Other { get; }
-
-        //IMyElement GetElement(By by);
     }
 
-    public interface ICheckBox : IMySearch
+    public interface IMyCheckBox : IMySearch
     {
         /// <summary>
         /// Clicks this element
         /// </summary>
         void Click();
 
-        //IOther Other { get; }
-        //
-        //IMyElement GetElement(By by);
+        void Check();
+        void UnCheck();
+
     }
 
+    //class MyClass: FindsByAttribute
+    //{
 
-    public class MyElement : IMyElement, IMyButton
+    //}
+
+
+    public class MyElement : IMyElement, IMyButton, IMyCheckBox
     {
         private IWebElement _element;
 
@@ -86,6 +89,22 @@ namespace UnitTestProject1.Elements
         {
             _element.SendKeys(text);
         }
+
+        public void Check()
+        {
+            if (!_element.Selected)
+            {
+                _element.Click();
+            }
+        }
+
+        public void UnCheck()
+        {
+            if (_element.Selected)
+            {
+                _element.Click();
+            }
+        }
     }
 
     public interface IOther
@@ -95,29 +114,7 @@ namespace UnitTestProject1.Elements
         string GetCssValue(string propertyName);
 
         string Text { get; }
-        //
-        // Summary:
-        //     Gets a value indicating whether or not this element is enabled.
-        //
-        // Exceptions:
-        //   T:OpenQA.Selenium.StaleElementReferenceException:
-        //     Thrown when the target element is no longer valid in the document DOM.
-        //
-        // Remarks:
-        //     The OpenQA.Selenium.IWebElement.Enabled property will generally return true for
-        //     everything except explicitly disabled input elements.
         bool Enabled { get; }
-        //
-        // Summary:
-        //     Gets a value indicating whether or not this element is selected.
-        //
-        // Exceptions:
-        //   T:OpenQA.Selenium.StaleElementReferenceException:
-        //     Thrown when the target element is no longer valid in the document DOM.
-        //
-        // Remarks:
-        //     This operation only applies to input elements such as checkboxes, options in
-        //     a select element and radio buttons.
         bool Selected { get; }
     }
 
