@@ -195,6 +195,7 @@
     <Compile Include="PageObjects\AttributesHandler.cs" />
     <Compile Include="PageObjects\Attributes\BlockAttribute.cs" />
     <Compile Include="PageObjects\Attributes\NameAttribute.cs" />
+    <Compile Include="PageObjects\Button.cs" />
     <Compile Include="PageObjects\CustomElementLocatorFactory.cs" />
     <Compile Include="PageObjects\DefaultElementLocator.cs" />
     <Compile Include="PageObjects\DefaultFieldAttributesHandler.cs" />

@@ -82,7 +82,7 @@ namespace Yandex.HtmlElements.Loaders.Decorators.ProxyHandlers
             int elementNumber = 0;
             foreach (IWebElement element in elements)
             {
-                TypifiedElement typifiedElement = HtmlElementFactory.CreateTypifiedElementInstance(elementType, element);
+                TypifiedElement typifiedElement = null;
                 string typifiedElementName = string.Format("{0} {1}", name, elementNumber);
                 typifiedElement.Name = typifiedElementName;
                 typifiedElements.Add(typifiedElement);

@@ -20,6 +20,8 @@ namespace UnitTestProject1.Elements
 
         void SendKeys(string text);
 
+        void Submit();
+
     }
 
     public interface IMySearch
@@ -51,13 +53,8 @@ namespace UnitTestProject1.Elements
 
     }
 
-    //class MyClass: FindsByAttribute
-    //{
 
-    //}
-
-
-    public class MyElement : IMyElement, IMyButton, IMyCheckBox
+    public class MyElement : IMyButton, IMyCheckBox, IMyElement
     {
         private IWebElement _element;
 
@@ -66,7 +63,13 @@ namespace UnitTestProject1.Elements
         public IWebElement WebElement => _element;
 
         private ISearchContext _search;
+      
 
+        public MyElement(IWebElement element)
+        {
+           
+            _element = element;
+        }
 
         public MyElement(IWebElement element, By by, ISearchContext search)
         {
@@ -104,6 +107,11 @@ namespace UnitTestProject1.Elements
             {
                 _element.Click();
             }
+        }
+
+        public void Submit()
+        {
+            _element.Submit();
         }
     }
 

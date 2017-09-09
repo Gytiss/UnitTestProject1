@@ -32,7 +32,9 @@ namespace UnitTestProject1
             driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/checkboxes");
             //IMyElement ez = new MyElement()
             Page2 page2 = new Page2(driver);
-            page2.FindSmoth.Click();
+            string txt = page2.FindSmth.Other.Text;
+            Console.WriteLine(txt);
+            page2.FindSmth.UnCheck();
 
 
 
@@ -48,12 +50,12 @@ namespace UnitTestProject1
             //driver.GetElement(By.XPath("//button[@class='primary btn']")).Click();
             //driver.GetElement(By.XPath("//a[contains(.,'The Terminator')]")).Click();
             //driver.GetElement(By.XPath("//span[contains(.,'James Cameron')]")).Click();
-            
+
             //driver.GetElement(By.Id("home_img")).Click();
             //driver.GetElement(By.Id("home_img")).Click();
             //driver.GetElement(By.Name("q")).SendKeys("terminator2");
             //driver.GetElement(By.Id("navbar-submit-button")).Click();
-           
+
         }
     }
 

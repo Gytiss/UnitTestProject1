@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Reflection;
+using UnitTestProject1.Elements;
 using Yandex.HtmlElements.Elements;
 using Yandex.HtmlElements.PageFactories.Selenium;
 using Yandex.HtmlElements.Utils;
@@ -20,10 +21,10 @@ namespace Yandex.HtmlElements.Loaders.Decorators
 
         public override object Decorate(FieldInfo field)
         {
-            if (!IsDecoratableField(field))
-            {
-                return null;
-            }
+            //if (!IsDecoratableField(field))
+            //{
+            //    return null;
+            //}
 
             IElementLocator locator = factory.CreateLocator(field);
             if (locator == null)
@@ -33,12 +34,12 @@ namespace Yandex.HtmlElements.Loaders.Decorators
 
             String elementName = HtmlElementUtils.GetElementName(field);
 
-            if (HtmlElementUtils.IsTypifiedElement(field))
-            {
+            //if (HtmlElementUtils.IsTypifiedElement(field))
+            //{
                 Type typifiedElementType = field.FieldType;
                 return DecorateTypifiedElement(typifiedElementType, locator, elementName);
-            }
-            else if (HtmlElementUtils.IsHtmlElement(field))
+            //}
+             if (HtmlElementUtils.IsHtmlElement(field))
             {
                 Type htmlElementType = field.FieldType;
                 return DecorateHtmlElement(htmlElementType, locator, elementName);
@@ -47,11 +48,11 @@ namespace Yandex.HtmlElements.Loaders.Decorators
             {
                 return DecorateWebElement(locator, elementName);
             }
-            else if (HtmlElementUtils.IsTypifiedElementList(field))
-            {
-                Type typifiedElementType = HtmlElementUtils.GetGenericParameterType(field);
-                return DecorateTypifiedElementList(field.FieldType, typifiedElementType, locator, elementName);
-            }
+            //else if (HtmlElementUtils.IsTypifiedElementList(field))
+            //{
+            //    Type typifiedElementType = HtmlElementUtils.GetGenericParameterType(field);
+            //    return DecorateTypifiedElementList(field.FieldType, typifiedElementType, locator, elementName);
+            //}
             else if (HtmlElementUtils.IsHtmlElementList(field))
             {
                 Type htmlElementType = HtmlElementUtils.GetGenericParameterType(field);
@@ -77,12 +78,12 @@ namespace Yandex.HtmlElements.Loaders.Decorators
                     HtmlElementUtils.IsTypifiedElement(field) || HtmlElementUtils.IsTypifiedElementList(field));
         }
 
-        private TypifiedElement DecorateTypifiedElement(Type elementType, IElementLocator locator, string elementName)
+        private MyElement DecorateTypifiedElement(Type elementType, IElementLocator locator, string elementName)
         {
             // Create typified element and initialize it with WebElement proxy
             IWebElement elementToWrap = HtmlElementFactory.CreateNamedProxyForWebElement(locator, elementName);
-            TypifiedElement typifiedElementInstance = HtmlElementFactory.CreateTypifiedElementInstance(elementType, elementToWrap);
-            typifiedElementInstance.Name = elementName;
+            MyElement typifiedElementInstance = HtmlElementFactory.CreateTypifiedElementInstance(elementType, elementToWrap);
+            //typifiedElementInstance.Name = elementName;
             return typifiedElementInstance;
         }
 

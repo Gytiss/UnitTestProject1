@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
+using UnitTestProject1.Elements;
 using Yandex.HtmlElements.Attributes;
 using Yandex.HtmlElements.Elements;
 
@@ -19,12 +20,22 @@ namespace Yandex.HtmlElements.Utils
         private const char NamespaceDelimeter = '.';
 
         public static T newInstance<T>(Type type, params object[] args)
+            where T : class
         {
             Type resultType = typeof(T);
-            if (type.IsClass && resultType.IsAssignableFrom(type))
-            {
-                return (T)Activator.CreateInstance(type, args);
-            }
+            //var test = MyElement.GetType();
+            //if (type.IsClass && resultType.IsAssignableFrom(type))
+            //{
+            //var constructor = typeof(MyElement).GetConstructor(new[] { typeof(IWebElement) });
+
+            //if (constructor != null)
+            //{
+            //    return constructor.Invoke(new object[] { args }) as T;
+            //}
+
+
+            return (T)Activator.CreateInstance(resultType, args[0]);
+            ///}
             return default(T);
         }
 

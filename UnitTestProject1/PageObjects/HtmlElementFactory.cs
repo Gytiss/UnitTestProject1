@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using UnitTestProject1.Elements;
 using Yandex.HtmlElements.Elements;
 using Yandex.HtmlElements.Exceptions;
 //using Yandex.HtmlElements.Exceptions;
@@ -21,12 +22,12 @@ namespace Yandex.HtmlElements.Loaders.Decorators
             throw new HtmlElementsException(string.Format("Type '{0}' isn't a derivative type of 'HtmlElement'", elementType));
         }
 
-        public static TypifiedElement CreateTypifiedElementInstance(Type elementType, IWebElement elementToWrap)
+        public static MyElement CreateTypifiedElementInstance(Type elementType, IWebElement elementToWrap)
         {
-            if (typeof(TypifiedElement).IsAssignableFrom(elementType))
-            {
-                return HtmlElementUtils.newInstance<TypifiedElement>(elementType, elementToWrap);
-            }
+            //if (typeof(TypifiedElement).IsAssignableFrom(elementType))
+            //{
+                return HtmlElementUtils.newInstance<MyElement>(elementType, elementToWrap);
+            //}
             throw new HtmlElementsException(string.Format("Type '{0}' isn't a derivative type of 'TypifiedElement'", elementType));
         }
 

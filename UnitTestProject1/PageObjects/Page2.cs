@@ -28,14 +28,14 @@ namespace UnitTestProject1.PageObjects
         }
 
         [FindsBy(How = How.XPath, Using = ".//*[@id='checkboxes']/input[2]")]
-        private IWebElement ele;
+        private IMyCheckBox ele;
 
         //[FindsBy(How = How.XPath, Using = ".//*[@id='checkboxes']/input[2]")]
         //IWebElement ele;
         //WindowsElement ele;
         //IMyElement ele;
 
-        public IWebElement FindSmoth
+        public IMyCheckBox FindSmth
         {
             get { return ele; }
         }
